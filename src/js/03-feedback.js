@@ -8,8 +8,6 @@ const input = document.querySelector('.input');
 const storage = 'feedback-form-state';
 const formEntries = {};
 
-accumulateTextarea();
-
 form.addEventListener(
   'input',
   throttle(event => {
@@ -22,7 +20,7 @@ form.addEventListener(
 form.addEventListener('submit', event => {
   event.preventDefault();
   event.currentTarget.reset();
-  const object = JSON.parse(localStorage.getItem(storage));
+  console.log(JSON.parse(localStorage.getItem(storage)));
   localStorage.removeItem(storage);
 });
 
@@ -34,5 +32,3 @@ function accumulateTextarea() {
   textarea.value = savedMessage['message'] || '';
   input.value = savedMessage['email'] || '';
 }
-
-console.log(formEntries);
