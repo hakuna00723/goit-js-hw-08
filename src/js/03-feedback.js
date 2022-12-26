@@ -34,3 +34,5 @@ function accumulateTextarea() {
   textarea.value = savedMessage['message'] || '';
   input.value = savedMessage['email'] || '';
 }
+
+console.log(formEntries);
