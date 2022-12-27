@@ -3,8 +3,8 @@ import '../css/03-feedback.css';
 import throttle from 'lodash.throttle';
 
 const form = document.querySelector('.feedback-form');
-const textarea = document.querySelector('.feedback-form textarea');
-const input = document.querySelector('.input');
+const textarea = document.querySelector(`[name="message"]`);
+const input = document.querySelector(`[name="email"]`);
 const storage = 'feedback-form-state';
 const formEntries = {};
 
@@ -32,3 +32,4 @@ function accumulateTextarea() {
   textarea.value = savedMessage['message'] || '';
   input.value = savedMessage['email'] || '';
 }
+accumulateTextarea();
